@@ -11,15 +11,14 @@ import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.zadania.kotlinweather.R
 import com.zadania.kotlinweather.databinding.MainFragmentBinding
-import com.zadania.kotlinweather.model.entites.AppState
+import com.zadania.kotlinweather.model.AppState
 import com.zadania.kotlinweather.model.entites.Weather
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
-
     private val viewModel: MainViewModel by viewModel()
-    private var _binding:MainFragmentBinding?=null
+    private var _binding: MainFragmentBinding?=null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -53,7 +52,6 @@ class MainFragment : Fragment() {
                 progressBar.visibility=View.GONE
                 weatherGroup.visibility=View.VISIBLE
                 setData(weatherData)
-
             }
 
             is AppState.Loading -> {
